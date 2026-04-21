@@ -170,57 +170,29 @@ h1 {
   color: var(--muted);
 }
 
-.price-banner {
+.hero-summary-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.95fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 26px;
-  padding: 18px 20px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.66);
+}
+
+.hero-summary-card {
+  padding: 18px;
+  border-radius: var(--radius-md);
   border: 1px solid rgba(22, 36, 29, 0.08);
+  background: rgba(255, 255, 255, 0.72);
 }
 
-.price-option {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 4px 0;
-}
-
-.price-option-primary {
-  border-right: 1px solid rgba(22, 36, 29, 0.08);
-}
-
-.price-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 84px;
-  height: 84px;
-  padding: 0 18px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, var(--brand), #145148);
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.price-pill-alt {
-  background: linear-gradient(135deg, #815216, #a56a16);
-}
-
-.price-option strong,
+.hero-summary-card strong,
 .inclusions-card strong,
 .billing-note strong {
   display: block;
   font-size: 1rem;
 }
 
-.price-option span,
+.hero-summary-card span,
 .billing-note span,
-.trust-item span,
 .offer-card p,
 .inclusions-card li,
 .summary-label,
@@ -234,7 +206,7 @@ h1 {
   color: var(--muted);
 }
 
-.price-option span {
+.hero-summary-card span {
   display: block;
   margin-top: 8px;
   line-height: 1.55;
@@ -243,13 +215,9 @@ h1 {
 .hero-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 12px;
-}
-
-.hero-actions-stacked {
-  flex-direction: column;
-  align-items: stretch;
+  margin-top: 24px;
 }
 
 .primary-link-button,
@@ -277,13 +245,6 @@ h1 {
   color: var(--ink);
 }
 
-.trust-band {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 34px;
-}
-
 .trust-item,
 .inclusions-card,
 .summary-block,
@@ -298,20 +259,11 @@ h1 {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.trust-item {
-  padding: 18px 18px 16px;
-}
-
 .trust-item strong,
 .summary-block strong,
 .signal-badge,
 .status-pill {
   display: block;
-}
-
-.trust-item span {
-  margin-top: 8px;
-  line-height: 1.55;
 }
 
 .query-card-header,
@@ -560,26 +512,6 @@ h1 {
 .signal-badge {
   background: rgba(165, 106, 22, 0.12);
   color: var(--gold);
-}
-
-.inline-price-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-self: flex-start;
-}
-
-.mini-price-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(22, 36, 29, 0.08);
-  font-size: 0.84rem;
-  font-weight: 700;
-  color: var(--ink);
 }
 
 .example-browser {
@@ -839,7 +771,7 @@ h1 {
 @media (max-width: 1120px) {
   .hero,
   .panel-grid,
-  .trust-band,
+  .hero-summary-grid,
   .offer-grid,
   .evidence-grid,
   .process-grid {
@@ -847,18 +779,11 @@ h1 {
   }
 
   .field-row,
-  .price-banner,
   .delivery-grid,
   .example-browser,
   .signal-columns,
   .report-sections {
     grid-template-columns: 1fr;
-  }
-
-  .price-option-primary {
-    border-right: none;
-    border-bottom: 1px solid rgba(22, 36, 29, 0.08);
-    padding-bottom: 16px;
   }
 
   .hero-actions {
