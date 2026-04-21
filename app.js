@@ -21,8 +21,11 @@ const exampleTitle = document.getElementById("example-title");
 const exampleSubtitle = document.getElementById("example-subtitle");
 const sponsorStrip = document.getElementById("sponsor-strip");
 const findingList = document.getElementById("finding-list");
-const excerptText = document.getElementById("excerpt-text");
-const teaserList = document.getElementById("teaser-list");
+const headlineList = document.getElementById("headline-list");
+const miniOpportunityTable = document.getElementById("mini-opportunity-table");
+const excerptLead = document.getElementById("excerpt-lead");
+const excerptQuote = document.getElementById("excerpt-quote");
+const nextStepList = document.getElementById("next-step-list");
 
 const EXAMPLES = {
   botanical: {
@@ -49,25 +52,39 @@ const EXAMPLES = {
     ],
     sponsors: ["CPRIT", "NIH SBIR/STTR", "NCI", "DoD CDMRP"],
     findings: [
-      "State cancer funding emerged as a major advantage because the topic had clear Texas oncology relevance.",
-      "Academic partnership materially improved eligibility for stronger-fit opportunities and larger award ceilings.",
-      "The strongest paths were specific and high-fit rather than broad generic grant directories.",
+      "CPRIT was described in the completed report as the most aggressive capital deployment vehicle for oncology-related life sciences in Texas, with up to $1.2 million over four years.",
+      "The report emphasized that private companies cannot lead the CPRIT IIRA mechanism, so a Texas academic partner is structurally required.",
+      "The NCI PAR-25-145 path was presented as direct mechanistic validation funding for microbiome modulation, cytokine suppression, and mucosal barrier restoration work.",
     ],
-    excerpt:
-      "The completed report narrowed the field to a small set of stronger-fit programs where Texas oncology relevance, preclinical stage, and partnership structure materially changed eligibility and usefulness.",
+    headlines: [
+      "7 verified non-dilutive opportunities across 3 tiers.",
+      "CPRIT IIRA deadline April 28, 2026 and academic partnership required.",
+      "DoD CDMRP FY26 appropriation surged to $1.27B, with Inflammatory Bowel Disease explicitly listed.",
+    ],
     opportunities: [
       {
-        name: "CPRIT Individual Investigator Research Awards",
-        detail: "Open now / Texas academic lead required",
+        name: "CPRIT IIRA",
+        status: "Open now",
+        deadline: "2026-04-28",
       },
       {
         name: "NIH SBIR/STTR Omnibus",
-        detail: "Upcoming / Small business route",
+        status: "Upcoming",
+        deadline: "2026-09-05",
       },
       {
-        name: "NCI Therapy-Induced Adverse Sequelae",
-        detail: "Open now / Mechanistic preclinical fit",
+        name: "NCI PAR-25-145",
+        status: "Open now",
+        deadline: "2026-06-05",
       },
+    ],
+    quoteLead: "Strategic highlight from the completed report",
+    quote:
+      "CPRIT represents the most aggressive capital deployment vehicle for oncology-related life sciences in Texas, offering up to $1.2 million over four years through Individual Investigator Research Awards. Capturing this funding requires immediate execution of a Sponsored Research Agreement with a Texas academic institution.",
+    nextSteps: [
+      "Engage MD Anderson, Baylor, or UT Health Houston immediately for the CPRIT IIRA route.",
+      "Register in eBRAP ahead of the expected CDMRP pre-application window in May or June 2026.",
+      "Finalize preliminary mechanistic data needed for the June 5 NCI PAR-25-145 submission.",
     ],
   },
   oral: {
@@ -93,25 +110,39 @@ const EXAMPLES = {
     ],
     sponsors: ["NIDCR", "NIH SBIR/STTR", "ADA Foundation", "Dental partners"],
     findings: [
-      "The funding landscape was much narrower than expected, which makes filtering especially valuable.",
-      "NIDCR-related routes outranked broader opioid-response programs because the product fit was far more precise.",
-      "Texas opioid settlement funding looked adjacent on the surface but was excluded as a structural mismatch for this R&D topic.",
+      "The report explicitly said the funding ecosystem for Program 2 is highly centralized and presented only two highlights to avoid artificially padding the analysis.",
+      "NIDCR was described as the monolithic funder for dental pharmacology and oral health innovation in the United States for this use case.",
+      "Texas opioid settlement funds were presented as a critical misalignment because no competitive RFA track was designed to fund preclinical pharmacological R&D.",
     ],
-    excerpt:
-      "The completed report showed that the oral-toxicity concept lived in a tightly constrained funding landscape, where the real value came from excluding visible but structurally mismatched opioid-response funding and focusing on the few routes that actually fit.",
+    headlines: [
+      "The report said fewer than 5 truly strong opportunities existed for the combined portfolio, especially for Program 2.",
+      "Program 2's path was described as narrow, with NIH NIDCR SBIR Omnibus as the definitive large-scale vehicle.",
+      "Texas opioid settlement funding was ruled out as structurally inaccessible for this R&D topic.",
+    ],
     opportunities: [
       {
-        name: "NIH SBIR/STTR Omnibus (NIDCR route)",
-        detail: "Upcoming / Primary large-scale path",
+        name: "NIH SBIR/STTR Omnibus",
+        status: "Upcoming",
+        deadline: "2026-09-05",
       },
       {
-        name: "ADA Foundation Promising Researcher Award",
-        detail: "Supplemental / Small academic award",
+        name: "ADA Foundation Award",
+        status: "Upcoming",
+        deadline: "Spring 2026",
       },
       {
-        name: "Texas opioid settlement funding",
-        detail: "Excluded / Structural mismatch for R&D",
+        name: "Texas opioid settlement",
+        status: "Excluded",
+        deadline: "N/A",
       },
+    ],
+    quoteLead: "Program 2 positioning from the completed report",
+    quote:
+      "NIDCR operates as the monolithic funder for dental pharmacology and oral health innovation in the United States. Program 2 represents exactly the functional consumer health product NIDCR seeks to commercialize. The September 5, 2026 SBIR deadline is the optimal target.",
+    nextSteps: [
+      "Verify SAM.gov, UEI, and SBA registry status early so the September SBIR window is not blocked administratively.",
+      "Identify a dental research collaborator such as UT Health San Antonio School of Dentistry for the STTR-aligned route.",
+      "Avoid Texas opioid settlement grant chasing for this topic; the completed report treated that path as an exclusion, not an opportunity.",
     ],
   },
 };
@@ -150,22 +181,30 @@ function renderExample(key) {
   renderList(fundingPaths, config.paths, "");
   renderList(sponsorStrip, config.sponsors, "sponsor-tag");
   renderList(findingList, config.findings, "");
-  excerptText.textContent = config.excerpt;
+  renderList(headlineList, config.headlines, "");
+  excerptLead.textContent = config.quoteLead;
+  excerptQuote.textContent = config.quote;
+  renderList(nextStepList, config.nextSteps, "");
 
-  teaserList.innerHTML = "";
-  config.opportunities.forEach((opportunity) => {
-    const item = document.createElement("div");
-    item.className = "teaser-item";
-
-    const strong = document.createElement("strong");
-    strong.textContent = opportunity.name;
-
+  miniOpportunityTable.innerHTML = "";
+  const headerRow = document.createElement("div");
+  headerRow.className = "mini-opportunity-row mini-opportunity-head";
+  ["Program", "Status", "Deadline"].forEach((label) => {
     const span = document.createElement("span");
-    span.textContent = opportunity.detail;
+    span.textContent = label;
+    headerRow.appendChild(span);
+  });
+  miniOpportunityTable.appendChild(headerRow);
 
-    item.appendChild(strong);
-    item.appendChild(span);
-    teaserList.appendChild(item);
+  config.opportunities.forEach((opportunity) => {
+    const row = document.createElement("div");
+    row.className = "mini-opportunity-row";
+    [opportunity.name, opportunity.status, opportunity.deadline].forEach((value) => {
+      const span = document.createElement("span");
+      span.textContent = value;
+      row.appendChild(span);
+    });
+    miniOpportunityTable.appendChild(row);
   });
 }
 

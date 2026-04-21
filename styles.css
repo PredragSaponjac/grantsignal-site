@@ -170,6 +170,35 @@ h1 {
   color: var(--muted);
 }
 
+.hero-truth,
+.section-copy {
+  margin: 18px 0 0;
+  color: var(--ink);
+  line-height: 1.7;
+  font-weight: 600;
+  max-width: 68ch;
+}
+
+.audience-band {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(22, 36, 29, 0.08);
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.audience-band strong {
+  min-width: 220px;
+}
+
+.audience-band span {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .hero-summary-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -407,12 +436,14 @@ h1 {
 }
 
 .inclusions-card,
+.buyer-fit-card,
 .billing-note {
   margin-top: 18px;
   padding: 16px 18px;
 }
 
 .inclusions-card ul,
+.buyer-fit-card ul,
 .finding-card ul,
 .signal-columns ul,
 .mini-panel ul {
@@ -424,6 +455,10 @@ h1 {
 .billing-note {
   background: rgba(13, 107, 98, 0.08);
   border-color: rgba(13, 107, 98, 0.12);
+}
+
+.buyer-fit-card {
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .billing-note span {
@@ -476,6 +511,26 @@ h1 {
 .evidence-strip,
 .process {
   margin-top: 24px;
+}
+
+.proof-band {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-top: 22px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(13, 107, 98, 0.14);
+  background: rgba(13, 107, 98, 0.08);
+}
+
+.proof-band strong {
+  min-width: 280px;
+}
+
+.proof-band span {
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .section-heading {
@@ -557,6 +612,14 @@ h1 {
   font-size: 0.9rem;
 }
 
+.example-item-proof {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
 .example-detail {
   border-radius: 20px;
   padding: 18px;
@@ -589,6 +652,13 @@ h1 {
   margin-top: 18px;
 }
 
+.real-report-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
 .preview-summary {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -615,7 +685,9 @@ h1 {
 }
 
 .excerpt-card,
-.teaser-card {
+.teaser-card,
+.report-quote-card,
+.report-actions-card {
   padding: 18px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(22, 36, 29, 0.08);
@@ -631,6 +703,34 @@ h1 {
   margin: 0;
   color: var(--muted);
   line-height: 1.72;
+}
+
+.headline-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.quote-lead {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.98rem;
+}
+
+.report-quote {
+  margin: 12px 0 0;
+  padding: 0 0 0 16px;
+  border-left: 3px solid rgba(13, 107, 98, 0.2);
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.next-step-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .signal-columns {
@@ -667,29 +767,33 @@ h1 {
   font-weight: 600;
 }
 
-.teaser-list {
-  display: grid;
-  gap: 10px;
+.mini-opportunity-table {
   margin-top: 4px;
-}
-
-.teaser-item {
-  padding: 12px 14px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.88);
+  overflow: hidden;
   border: 1px solid rgba(22, 36, 29, 0.08);
 }
 
-.teaser-item strong {
-  display: block;
-  line-height: 1.4;
+.mini-opportunity-row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr 0.9fr;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(22, 36, 29, 0.08);
+  font-size: 0.92rem;
 }
 
-.teaser-item span {
-  display: block;
-  margin-top: 6px;
+.mini-opportunity-row:last-child {
+  border-bottom: none;
+}
+
+.mini-opportunity-head {
+  background: rgba(246, 248, 243, 0.96);
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .report-shell {
@@ -835,9 +939,26 @@ h1 {
   .delivery-grid,
   .example-browser,
   .proof-grid,
+  .real-report-grid,
   .signal-columns,
   .report-sections {
     grid-template-columns: 1fr;
+  }
+
+  .proof-band {
+    flex-direction: column;
+  }
+
+  .audience-band {
+    flex-direction: column;
+  }
+
+  .proof-band strong {
+    min-width: 0;
+  }
+
+  .audience-band strong {
+    min-width: 0;
   }
 
   .hero-actions {
