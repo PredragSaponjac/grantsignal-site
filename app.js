@@ -21,6 +21,8 @@ const exampleTitle = document.getElementById("example-title");
 const exampleSubtitle = document.getElementById("example-subtitle");
 const sponsorStrip = document.getElementById("sponsor-strip");
 const findingList = document.getElementById("finding-list");
+const excerptText = document.getElementById("excerpt-text");
+const teaserList = document.getElementById("teaser-list");
 
 const EXAMPLES = {
   botanical: {
@@ -51,6 +53,22 @@ const EXAMPLES = {
       "Academic partnership materially improved eligibility for stronger-fit opportunities and larger award ceilings.",
       "The strongest paths were specific and high-fit rather than broad generic grant directories.",
     ],
+    excerpt:
+      "The completed report narrowed the field to a small set of stronger-fit programs where Texas oncology relevance, preclinical stage, and partnership structure materially changed eligibility and usefulness.",
+    opportunities: [
+      {
+        name: "CPRIT Individual Investigator Research Awards",
+        detail: "Open now / Texas academic lead required",
+      },
+      {
+        name: "NIH SBIR/STTR Omnibus",
+        detail: "Upcoming / Small business route",
+      },
+      {
+        name: "NCI Therapy-Induced Adverse Sequelae",
+        detail: "Open now / Mechanistic preclinical fit",
+      },
+    ],
   },
   oral: {
     badge: "Completed Report",
@@ -78,6 +96,22 @@ const EXAMPLES = {
       "The funding landscape was much narrower than expected, which makes filtering especially valuable.",
       "NIDCR-related routes outranked broader opioid-response programs because the product fit was far more precise.",
       "Texas opioid settlement funding looked adjacent on the surface but was excluded as a structural mismatch for this R&D topic.",
+    ],
+    excerpt:
+      "The completed report showed that the oral-toxicity concept lived in a tightly constrained funding landscape, where the real value came from excluding visible but structurally mismatched opioid-response funding and focusing on the few routes that actually fit.",
+    opportunities: [
+      {
+        name: "NIH SBIR/STTR Omnibus (NIDCR route)",
+        detail: "Upcoming / Primary large-scale path",
+      },
+      {
+        name: "ADA Foundation Promising Researcher Award",
+        detail: "Supplemental / Small academic award",
+      },
+      {
+        name: "Texas opioid settlement funding",
+        detail: "Excluded / Structural mismatch for R&D",
+      },
     ],
   },
 };
@@ -116,6 +150,23 @@ function renderExample(key) {
   renderList(fundingPaths, config.paths, "");
   renderList(sponsorStrip, config.sponsors, "sponsor-tag");
   renderList(findingList, config.findings, "");
+  excerptText.textContent = config.excerpt;
+
+  teaserList.innerHTML = "";
+  config.opportunities.forEach((opportunity) => {
+    const item = document.createElement("div");
+    item.className = "teaser-item";
+
+    const strong = document.createElement("strong");
+    strong.textContent = opportunity.name;
+
+    const span = document.createElement("span");
+    span.textContent = opportunity.detail;
+
+    item.appendChild(strong);
+    item.appendChild(span);
+    teaserList.appendChild(item);
+  });
 }
 
 function updatePlannedReport() {
