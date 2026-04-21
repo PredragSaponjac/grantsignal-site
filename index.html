@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrantSignal Mockup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <span class="brand-name">GrantSignal</span>
+        </div>
+        <nav class="topnav">
+          <a href="#offer">What You Get</a>
+          <a href="#preview">Example Previews</a>
+          <a href="#report">Full Report</a>
+          <a href="#evidence">Evidence Vault</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Specialized Funding Research / From $25</p>
+            <h1>Custom grant and non-dilutive funding research with a clear delivery promise.</h1>
+            <p class="lede">
+              Submit a topic and US geography, and receive a structured funding report built from
+              a purpose-engineered research workflow. The offer is simple on purpose: real signal,
+              readable output, and less time lost in search tabs.
+            </p>
+
+            <div class="price-banner">
+              <div class="price-option price-option-primary">
+                <span class="price-pill">$25</span>
+                <div>
+                  <strong>Standard report</strong>
+                  <span>Delivered within 12 hours. Best for most orders.</span>
+                </div>
+              </div>
+              <div class="price-option">
+                <span class="price-pill price-pill-alt">$39</span>
+                <div>
+                  <strong>Priority report</strong>
+                  <span>Delivered within 1 hour during active service hours.</span>
+                </div>
+              </div>
+              <div class="hero-actions hero-actions-stacked">
+                <a class="primary-link-button" href="#report">Choose Delivery Option</a>
+                <a class="ghost-link-button" href="#preview">See Example Previews</a>
+              </div>
+            </div>
+
+            <div class="trust-band">
+              <div class="trust-item">
+                <strong>Purpose-built workflow</strong>
+                <span>Engineered specifically for non-dilutive funding discovery, not generic chatbot output.</span>
+              </div>
+              <div class="trust-item">
+                <strong>Broad-source research</strong>
+                <span>Designed to scan federal, state, foundation, and mission-aligned opportunity landscapes.</span>
+              </div>
+              <div class="trust-item">
+                <strong>Readable final output</strong>
+                <span>Applicant fit, deadlines, references, and strategy in one decision-ready report.</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="query-card">
+            <div class="query-card-header">
+              <div>
+                <p class="card-kicker">Paid Custom Research</p>
+                <h2>Choose your delivery speed</h2>
+              </div>
+              <span class="status-pill">From $25</span>
+            </div>
+
+            <label class="field">
+              <span>Research Topic</span>
+              <textarea id="topic-input" rows="5">Proprietary botanical blend for alleviation of gut inflammation and chemotherapy-induced toxicity</textarea>
+            </label>
+
+            <div class="field-row">
+              <label class="field">
+                <span>Location</span>
+                <select id="location-input">
+                  <option>Texas</option>
+                  <option>Nationwide</option>
+                  <option>California</option>
+                  <option>Massachusetts</option>
+                  <option>Pennsylvania</option>
+                </select>
+              </label>
+
+              <label class="field">
+                <span>Applicant Model</span>
+                <select id="applicant-input">
+                  <option>Undecided</option>
+                  <option>Small business</option>
+                  <option>Academic institution</option>
+                  <option>Nonprofit</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="chip-row">
+              <span class="chip">Custom topic + geography</span>
+              <span class="chip">No free custom runs</span>
+              <span class="chip">US-only</span>
+              <span class="chip">Source-backed</span>
+            </div>
+
+            <div class="delivery-grid">
+              <div class="delivery-card delivery-card-standard">
+                <div class="delivery-topline">
+                  <strong>Standard</strong>
+                  <span class="delivery-price">$25</span>
+                </div>
+                <p>Delivered within 12 hours.</p>
+                <span class="delivery-note">Best for most buyers</span>
+              </div>
+              <div class="delivery-card delivery-card-priority">
+                <div class="delivery-topline">
+                  <strong>Priority</strong>
+                  <span class="delivery-price">$39</span>
+                </div>
+                <p>Delivered within 1 hour during active service hours.</p>
+                <span class="delivery-note">Fastest turnaround</span>
+              </div>
+            </div>
+
+            <div class="inclusions-card">
+              <strong>What every report includes</strong>
+              <ul>
+                <li>Ranked funding paths matched to the topic and geography</li>
+                <li>Official-source references and opportunity links</li>
+                <li>Fit notes, stage logic, and applicant strategy</li>
+                <li>Readable structure instead of raw AI research sprawl</li>
+              </ul>
+            </div>
+
+            <div class="billing-note">
+              <strong>Prepaid only</strong>
+              <span>
+                Users pay before a custom run starts. That keeps the service sustainable and keeps
+                the offer easy to understand: one topic, one geography, and a clear delivery tier.
+              </span>
+            </div>
+
+            <button type="button" class="primary-button" id="preview-button">
+              Continue To Order
+            </button>
+
+            <p class="footnote">
+              No free custom preview is generated here. The examples below show the level of signal
+              and structure a buyer can inspect before purchasing their own report.
+            </p>
+          </aside>
+        </section>
+
+        <section class="offer-strip" id="offer">
+          <div class="section-heading">
+            <p class="eyebrow">What You Get</p>
+            <h2>Enough depth to be useful, while staying simple enough to feel like an easy yes.</h2>
+          </div>
+
+          <div class="offer-grid">
+            <article class="offer-card">
+              <span class="step-index">01</span>
+              <h3>Topic-specific research</h3>
+              <p>Your topic is not forced into a generic grant list. The search is framed around stage, mechanism, applicant model, and geography.</p>
+            </article>
+            <article class="offer-card">
+              <span class="step-index">02</span>
+              <h3>Readable ranked output</h3>
+              <p>The final report is organized to help someone act, not just admire a long AI writeup.</p>
+            </article>
+            <article class="offer-card">
+              <span class="step-index">03</span>
+              <h3>Official-source references</h3>
+              <p>Important opportunities are tied back to agencies, foundations, and other primary funding pages wherever possible.</p>
+            </article>
+            <article class="offer-card">
+              <span class="step-index">04</span>
+              <h3>Time saved</h3>
+              <p>The value proposition is straightforward: fewer hours lost to weak fits, stale listings, and endless tabs.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel-grid" id="preview">
+          <article class="panel panel-preview">
+            <div class="panel-head">
+              <div>
+                <p class="card-kicker">Example Smart Previews</p>
+                <h3>Example research snapshots help prove the service is real</h3>
+              </div>
+              <span class="signal-badge" id="outlook-badge">From Past Runs</span>
+            </div>
+
+            <div class="example-browser">
+              <div class="example-list">
+                <button class="example-item is-active" type="button" data-example="botanical">
+                  <span class="example-item-title">Texas oncology-supportive therapeutics</span>
+                  <span class="example-item-meta">Biomedical / Preclinical / State-specific</span>
+                </button>
+                <button class="example-item" type="button" data-example="oral">
+                  <span class="example-item-title">Nationwide oral health toxicity product</span>
+                  <span class="example-item-meta">Oral health / Prototype / Narrow field</span>
+                </button>
+                <button class="example-item" type="button" data-example="agtech">
+                  <span class="example-item-title">Midwest functional agriculture ingredient</span>
+                  <span class="example-item-meta">Agriculture / Translational / Regional</span>
+                </button>
+                <button class="example-item" type="button" data-example="ai">
+                  <span class="example-item-title">Nationwide AI-enabled diagnostics platform</span>
+                  <span class="example-item-meta">Digital health / Pilot / Federal-private</span>
+                </button>
+              </div>
+
+              <div class="example-detail">
+                <div class="example-header">
+                  <span class="summary-label">Selected Example</span>
+                  <h4 id="example-title">Texas oncology-supportive therapeutics</h4>
+                  <p id="example-subtitle">
+                    Previous run for a botanical therapeutic aimed at gut inflammation and chemotherapy-induced toxicity.
+                  </p>
+                </div>
+
+                <div class="preview-summary">
+                  <div class="summary-block">
+                    <span class="summary-label">Topic Classification</span>
+                    <strong id="topic-class">Biomedical / therapeutics</strong>
+                  </div>
+                  <div class="summary-block">
+                    <span class="summary-label">Likely Stage</span>
+                    <strong id="topic-stage">Preclinical / translational</strong>
+                  </div>
+                  <div class="summary-block">
+                    <span class="summary-label">Applicant Strategy</span>
+                    <strong id="topic-applicant">Small business with academic partner likely strongest</strong>
+                  </div>
+                  <div class="summary-block">
+                    <span class="summary-label">Geography Signal</span>
+                    <strong id="topic-geo">Texas flagship programs likely relevant</strong>
+                  </div>
+                </div>
+
+                <div class="insight-card">
+                  <span class="summary-label">Opportunity Outlook</span>
+                  <p id="topic-outlook">
+                    Likely search path centers on NIH SBIR/STTR, NCI, Texas CPRIT, DoD medical programs, and disease-specific foundations. Expect a short but credible list of high-value opportunities.
+                  </p>
+                </div>
+
+                <div class="signal-columns">
+                  <div>
+                    <span class="summary-label">Likely Funding Channels</span>
+                    <ul id="funding-paths">
+                      <li>NIH SBIR/STTR</li>
+                      <li>NCI supportive-care and adverse-sequelae programs</li>
+                      <li>Texas CPRIT translational and oncology pathways</li>
+                      <li>Disease-specific foundations</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <span class="summary-label">Preview Metrics</span>
+                    <ul class="metrics-list">
+                      <li><strong id="strong-fit-count">4</strong> likely strong-fit paths</li>
+                      <li><strong id="moderate-fit-count">3</strong> likely moderate-fit paths</li>
+                      <li><strong id="complexity-level">High</strong> research complexity</li>
+                      <li><strong id="source-count">12+</strong> official sources expected</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="sponsor-strip" id="sponsor-strip">
+                  <span class="sponsor-tag">NIH SBIR/STTR</span>
+                  <span class="sponsor-tag">NCI</span>
+                  <span class="sponsor-tag">CPRIT</span>
+                  <span class="sponsor-tag">Disease foundations</span>
+                </div>
+
+                <div class="finding-card">
+                  <span class="summary-label">Example Report Highlights</span>
+                  <ul id="finding-list">
+                    <li>State cancer funding emerged as a major advantage because the topic had clear Texas oncology relevance.</li>
+                    <li>Academic partnership materially improved eligibility for stronger-fit opportunities and larger award ceilings.</li>
+                    <li>The most valuable paths were narrow and specific, not broad generic grant directories.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel panel-locked" id="report">
+            <div class="panel-head">
+              <div>
+                <p class="card-kicker">Paid Full Report</p>
+                <h3>The paid report should feel useful, professional, and worth sharing</h3>
+              </div>
+              <div class="inline-price-tags">
+                <span class="mini-price-tag">$25 standard</span>
+                <span class="mini-price-tag">$39 priority</span>
+              </div>
+            </div>
+
+            <div class="report-shell">
+              <div class="report-header">
+                <div>
+                  <span class="report-label">Report Snapshot</span>
+                  <h4 id="report-title">Texas-Based Botanical Therapeutics Funding Report</h4>
+                </div>
+                <div class="report-meta">
+                  <span>Run date: 2026-04-21</span>
+                  <span>Verified sources: 14</span>
+                </div>
+              </div>
+
+              <div class="report-table">
+                <div class="table-row table-head">
+                  <span>Program</span>
+                  <span>Status</span>
+                  <span>Fit</span>
+                  <span>Deadline</span>
+                </div>
+                <div class="table-row">
+                  <span>CPRIT Individual Investigator Research Awards</span>
+                  <span>Open now</span>
+                  <span>Strong</span>
+                  <span>2026-04-28</span>
+                </div>
+                <div class="table-row">
+                  <span>NIH SBIR/STTR Omnibus</span>
+                  <span>Upcoming</span>
+                  <span>Strong</span>
+                  <span>2026-09-05</span>
+                </div>
+                <div class="table-row">
+                  <span>NCI Therapy-Induced Adverse Sequelae</span>
+                  <span>Open now</span>
+                  <span>Strong</span>
+                  <span>2026-06-05</span>
+                </div>
+              </div>
+
+              <div class="report-sections">
+                <div class="mini-panel">
+                  <span class="summary-label">What unlocks</span>
+                  <ul>
+                    <li>Ranked opportunities with fit rationale</li>
+                    <li>Eligibility, burden, and partner strategy</li>
+                    <li>12-month sequencing calendar</li>
+                    <li>Monitoring watchlist</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <span class="summary-label">Reference vault</span>
+                  <ul>
+                    <li>Official URLs saved per opportunity</li>
+                    <li>Verification date and evidence notes</li>
+                    <li>Opportunity IDs and sponsor metadata</li>
+                    <li>Reusable source history for refresh runs</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="lock-overlay">
+                <div class="lock-card">
+                  <span class="lock-label">Paid report</span>
+                  <h4>Unlock the full report with ranked opportunities and saved references.</h4>
+                  <p>
+                    Public examples prove the methodology. Standard delivery is within 12 hours.
+                    Priority delivery is within 1 hour during active service hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="evidence-strip" id="evidence">
+          <div class="section-heading">
+            <p class="eyebrow">Evidence Vault</p>
+            <h2>Trust comes from saved sources, not polished wording alone</h2>
+          </div>
+
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <span class="evidence-type">Official agency page</span>
+              <h3>NIH FOA record</h3>
+              <p>Program metadata, verification date, sponsor mapping, and fit notes are stored with the report.</p>
+              <div class="evidence-meta">
+                <span>Last verified: 2026-04-15</span>
+                <span>Source class: Federal</span>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <span class="evidence-type">State program page</span>
+              <h3>Texas flagship funding</h3>
+              <p>State-specific opportunities are separated from nationwide programs so geography changes stay visible and auditable.</p>
+              <div class="evidence-meta">
+                <span>Last verified: 2026-04-15</span>
+                <span>Source class: State</span>
+              </div>
+            </article>
+
+            <article class="evidence-card">
+              <span class="evidence-type">Foundation page</span>
+              <h3>Disease-specific funding</h3>
+              <p>Foundation opportunities are tracked with confidence notes when the next cycle is not yet fully posted.</p>
+              <div class="evidence-meta">
+                <span>Last verified: 2026-04-10</span>
+                <span>Source class: Foundation</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="process">
+          <div class="section-heading">
+            <p class="eyebrow">How It Works</p>
+            <h2>Three-stage workflow built for clarity and control</h2>
+          </div>
+
+          <div class="process-grid">
+            <article class="process-card">
+              <span class="step-index">01</span>
+              <h3>Interpret the topic</h3>
+              <p>A purpose-built prompt framework classifies domain, stage, applicant model, and geographic relevance.</p>
+            </article>
+            <article class="process-card">
+              <span class="step-index">02</span>
+              <h3>Run deep research</h3>
+              <p>The workflow searches active or officially announced opportunities and extracts evidence from meaningful source pages.</p>
+            </article>
+            <article class="process-card">
+              <span class="step-index">03</span>
+              <h3>Publish a readable report</h3>
+              <p>A final pass turns the raw findings into a cleaner deliverable that is easier to scan, save, and use.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
