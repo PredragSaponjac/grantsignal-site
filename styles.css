@@ -575,6 +575,13 @@ h1 {
   line-height: 1.65;
 }
 
+.proof-note {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  color: var(--brand);
+  font-weight: 600;
+}
+
 .preview-summary {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
